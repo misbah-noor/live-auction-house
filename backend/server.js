@@ -12,7 +12,7 @@ const bidRoutes = require("./routes/bidRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 
-//Socket
+//Socket 
 const { initSocket } = require("./socket/socket");
 
 const app = express();
