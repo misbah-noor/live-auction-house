@@ -158,7 +158,7 @@ const AuctionDetail = () => {
         </div>
 
         {/* CENTER - DETAILS */}
-        <div className="bg-[var(--color-card)] w-[300px] md:w-full p-6 rounded-2xl shadow-lg">
+        <div className="bg-[var(--color-card)] w-[300px] md:w-full p-4 rounded-2xl shadow-lg">
 
           <p className="text-xs text-green-500 mb-2">
             🔴 LIVE AUCTION
@@ -219,13 +219,13 @@ const AuctionDetail = () => {
           </div>
 
           {/* BID BOX */}
-          <div className="flex md:gap-3 gap-1">
+          <div className="flex md:gap-3">
             <input
               type="number"
               value={bidAmount}
               onChange={(e) => setBidAmount(e.target.value)}
               placeholder="Enter bid..."
-              className="flex-1 md:px-4 md:py-3 px-2 py-1 rounded bg-gray-100 text-black outline-none"
+              className="md:flex-1 md:px-4 md:py-3 px-2 py-1 rounded bg-gray-100 text-black outline-none"
             />
 
             <button
