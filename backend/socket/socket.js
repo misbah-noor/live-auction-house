@@ -8,7 +8,7 @@ let io;
 const initSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: "https://live-auction-house.vercel.app",
+      origin: "https://live-auction-house-1wca.vercel.app",
       // "http://localhost:5173",
       methods: ["GET", "POST"],
       credentials: true,
