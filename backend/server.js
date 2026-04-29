@@ -19,7 +19,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-    origin: "https://live-auction-house.vercel.app",
+    origin: "",
     // "http://localhost:5173",
     credentials: true
 }));
