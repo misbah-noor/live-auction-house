@@ -124,7 +124,15 @@ const AuctionDetail = () => {
   }
 
   return (
-    <div className="min-h-screen px-6 pt-36 pb-18 text-[var(--color-text)]">
+    <div className="min-h-screen me-2 overflow-x-hidden px-6 pt-36 pb-18 text-[var(--color-text)]">
+      <div className="max-w-6xl mx-auto text-center mb-16">
+        <h1 className="text-5xl font-extrabold text-[var(--color-primary)] mb-4">
+          Let's Start Bidding!
+        </h1>
+        <p className="text-[var(--color-muted)] text-lg md:text-xl max-w-3xl mx-auto">
+         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure expedita consectetur, adipisci aut itaque fugit, recusandae nesciunt saepe voluptas qui ducimus ut sint!
+        </p>
+      </div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
 
@@ -132,7 +140,7 @@ const AuctionDetail = () => {
         <div className="space-y-4">
           <img
             src={activeImage}
-            className="rounded-2xl shadow-xl w-full h-[350px] object-cover"
+            className="rounded-2xl shadow-xl md:w-full w-[320px] h-[300px] md:h-[350px] object-cover"
           />
 
           <div className="flex gap-2 flex-wrap">
@@ -141,7 +149,7 @@ const AuctionDetail = () => {
                 key={i}
                 src={img}
                 onClick={() => setActiveImage(img)}
-                className={`w-16 h-16 rounded cursor-pointer border transition hover:scale-105 ${
+                className={`md:w-16 md:h-16 h-12 w-12 rounded cursor-pointer border transition hover:scale-105 ${
                   activeImage === img ? "border-yellow-500" : ""
                 }`}
               />
@@ -150,7 +158,7 @@ const AuctionDetail = () => {
         </div>
 
         {/* CENTER - DETAILS */}
-        <div className="bg-[var(--color-card)] p-6 rounded-2xl shadow-lg">
+        <div className="bg-[var(--color-card)] w-[300px] md:w-full p-6 rounded-2xl shadow-lg">
 
           <p className="text-xs text-green-500 mb-2">
             🔴 LIVE AUCTION
@@ -211,19 +219,19 @@ const AuctionDetail = () => {
           </div>
 
           {/* BID BOX */}
-          <div className="flex gap-3">
+          <div className="flex md:gap-3 gap-1">
             <input
               type="number"
               value={bidAmount}
               onChange={(e) => setBidAmount(e.target.value)}
               placeholder="Enter bid..."
-              className="flex-1 px-4 py-3 rounded bg-gray-100 text-black outline-none"
+              className="flex-1 md:px-4 md:py-3 px-2 py-1 rounded bg-gray-100 text-black outline-none"
             />
 
             <button
               onClick={handlePlaceBid}
               disabled={timeLeft <= 0}
-              className="bg-yellow-600 hover:bg-yellow-700 active:scale-95 transition text-white px-6 py-3 rounded-lg font-bold shadow-md disabled:bg-gray-500"
+              className="bg-yellow-600 hover:bg-yellow-700 active:scale-95 transition text-white md:px-6 px-3 md:py-3 py-1 rounded-lg font-bold shadow-md disabled:bg-gray-500"
             >
               {timeLeft <= 0 ? "Ended" : "Bid Now"}
             </button>
@@ -231,7 +239,7 @@ const AuctionDetail = () => {
         </div>
 
         {/* RIGHT - LIVE BIDS */}
-        <div className="bg-[var(--color-card)] p-6 rounded-2xl shadow-lg">
+        <div className="bg-[var(--color-card)] p-6 me-2 w-[300px] md:w-full rounded-2xl shadow-lg">
 
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-[var(--color-primary)]">
