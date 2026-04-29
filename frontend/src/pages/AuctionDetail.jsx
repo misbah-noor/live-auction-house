@@ -158,7 +158,7 @@ const AuctionDetail = () => {
         </div>
 
         {/* CENTER - DETAILS */}
-        <div className="bg-[var(--color-card)] w-[300px] md:w-full p-4 rounded-2xl shadow-lg">
+        <div className="bg-[var(--color-card)] w-full p-4 rounded-2xl shadow-lg">
 
           <p className="text-xs text-green-500 mb-2">
             🔴 LIVE AUCTION
@@ -219,19 +219,19 @@ const AuctionDetail = () => {
           </div>
 
           {/* BID BOX */}
-          <div className="flex md:gap-3">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="number"
               value={bidAmount}
               onChange={(e) => setBidAmount(e.target.value)}
               placeholder="Enter bid..."
-              className="md:flex-1 md:px-4 md:py-3 px-2 py-1 rounded bg-gray-100 text-black outline-none"
+              className="flex-1 sm:px-4 sm:py-3 px-3 py-2 rounded bg-gray-100 text-black outline-none w-full"
             />
 
             <button
               onClick={handlePlaceBid}
               disabled={timeLeft <= 0}
-              className="bg-yellow-600 hover:bg-yellow-700 active:scale-95 transition text-white md:px-6 px-3 md:py-3 py-1 rounded-lg font-bold shadow-md disabled:bg-gray-500"
+              className="w-full sm:w-auto bg-yellow-600 hover:bg-yellow-700 active:scale-95 transition text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-bold shadow-md disabled:bg-gray-500"
             >
               {timeLeft <= 0 ? "Ended" : "Bid Now"}
             </button>
