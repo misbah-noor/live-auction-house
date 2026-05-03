@@ -23,12 +23,21 @@ const Login = () => {
     let res;
 
     if (isLogin) {
-      res = await login({ email: form.email, password: form.password });
+  res = await login({ email: form.email, password: form.password });
 
-      if (!res) return;
+  if (!res) return;
 
-      toast.success(`Welcome back ${res.user.name}!`);
-    } else {
+  const loggedUser = res.user;
+
+  const hasLoggedInBefore = localStorage.getItem(`hasLoggedIn_${loggedUser.email}`);
+
+  if (!hasLoggedInBefore) {
+    toast.success(`Welcome ${loggedUser.name}! 🎉`);
+    localStorage.setItem(`hasLoggedIn_${loggedUser.email}`, "true");
+  } else {
+    toast.success(`Welcome back ${loggedUser.name}! 👋`);
+  }
+} else {
       res = await register(form);
 
       if (!res) return;

@@ -19,7 +19,8 @@ const app = express();
 
 // CORS
 app.use(cors({
-    origin: "https://live-auction-house-1wca.vercel.app",
+    origin: 
+    "https://live-auction-house-1wca.vercel.app",
     //  "http://localhost:5173",
     credentials: true
 }));

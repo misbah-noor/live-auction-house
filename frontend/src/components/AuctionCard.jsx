@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AuctionCard = ({ auction, variants }) => {
   return (
     <motion.div variants={variants}>
-      <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-5 hover:shadow-xl transition duration-300">
+      <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-2xl p-4 w-[280px] flex-wrap flex flex-col hover:shadow-xl transition duration-300">
 
         {/* IMAGE */}
         <div className="h-50 w-full bg-gray-200 rounded-xl mb-4 flex items-center justify-center overflow-hidden">

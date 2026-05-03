@@ -140,7 +140,7 @@ const AuctionDetail = () => {
         <div className="space-y-4">
           <img
             src={activeImage}
-            className="rounded-2xl shadow-xl md:w-full w-[320px] h-[300px] md:h-[350px] object-cover"
+            className="rounded-2xl shadow-xl w-full h-[300px] md:h-[350px] object-cover"
           />
 
           <div className="flex gap-2 flex-wrap">
@@ -239,7 +239,7 @@ const AuctionDetail = () => {
         </div>
 
         {/* RIGHT - LIVE BIDS */}
-        <div className="bg-[var(--color-card)] p-6 me-2 w-[300px] md:w-full rounded-2xl shadow-lg">
+        <div className="bg-[var(--color-card)] p-6 me-2 w-[350px] w-full rounded-2xl shadow-lg">
 
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-[var(--color-primary)]">
