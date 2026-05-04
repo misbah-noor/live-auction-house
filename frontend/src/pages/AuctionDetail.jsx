@@ -88,6 +88,8 @@ const AuctionDetail = () => {
   }, [id]);
 
   const handlePlaceBid = async () => {
+    if(!user) 
+      return toast.error("Please login to place a bid");
     if (timeLeft <= 0) return toast.error("Auction ended");
 
     if (!bidAmount || Number(bidAmount) <= currentPrice)
@@ -97,8 +99,10 @@ const AuctionDetail = () => {
       auctionId: id,
       amount: Number(bidAmount),
     });
-
-    if (!res) return toast.error("Bid failed");
+    
+    if (!res.success) {
+      return toast.error(res.message);
+    }
 
     toast.success("Bid placed!");
     setBidAmount("");
@@ -225,15 +229,16 @@ const AuctionDetail = () => {
               value={bidAmount}
               onChange={(e) => setBidAmount(e.target.value)}
               placeholder="Enter bid..."
-              className="flex-1 sm:px-4 sm:py-3 px-3 py-2 rounded bg-gray-100 text-black outline-none w-full"
+              disabled={timeLeft <= 0 || !user}
+              className="flex-1 sm:px-4 sm:py-3 px-3 py-2 rounded bg-gray-100 text-black outline-none w-full disabled:opacity-50 disabled:cursor-not-allowed"
             />
 
             <button
               onClick={handlePlaceBid}
-              disabled={timeLeft <= 0}
+              disabled={timeLeft <= 0 || !user}
               className="w-full sm:w-auto bg-yellow-600 hover:bg-yellow-700 active:scale-95 transition text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-bold shadow-md disabled:bg-gray-500"
             >
-              {timeLeft <= 0 ? "Ended" : "Bid Now"}
+              {!user ? "Login to Bid" : timeLeft <= 0 ? "Ended" : "Bid Now"}
             </button>
           </div>
         </div>

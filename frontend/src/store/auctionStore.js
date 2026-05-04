@@ -65,13 +65,15 @@ export const useAuctionStore = create((set) => ({
       },
     });
 
-    return res.data;
+    return { success: true, data: res.data }; 
   } catch (error) {
     console.log("BID ERROR:", error.response?.data || error.message);
 
     return {
-      error: error.response?.data?.message || "Bid failed",
+      success: false,
+      message: error.response?.data?.message || "Bid failed",
     };
   }
 }
+
 }));
